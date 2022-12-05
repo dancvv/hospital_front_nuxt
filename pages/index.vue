@@ -24,11 +24,9 @@
           <div>
             <div class="filter-wrapper">
               <span class="label">等级：</span>
-              <div class="condition-wrapper"><span class="item v-link highlight clickable selected">
-                  全部 </span><span class="item v-link clickable">
-                  三级医院 </span><span class="item v-link clickable">
-                  二级医院 </span><span class="item v-link clickable">
-                  一级医院 </span></div>
+              <div class="condition-wrapper">
+                <span  class="item v-link highlight clickable selected"> 全部 </span>
+              </div>
             </div>
             <div class="filter-wrapper">
               <span class="label">地区：</span>
@@ -192,6 +190,65 @@
   </div>
 </template>
 <script>
+import hospApi from '@/api/hosp';
+import dictApi from '@/api/dict'
 export default {
+  // 服务端渲染,显示医院列表
+  asyncData({params, error}){
+    // 调用
+    return hospApi.getPageList(1, 10, null)
+    .then(response => {
+      return {
+        list: response.data.content,
+        pages: response.data.totalPages
+      }
+    })
+  },
+  data(){
+     return{
+      searchObj: {},
+      page: 1,
+      limit: 10,
+
+      hosname: '', //医院名称
+      hostypeList: [], //医院等级集合
+      districtList: [], //地区集合
+
+      hostypeActiveIndex: 0,
+      provinceActiveIndex: 0
+
+     }
+  },
+  created(){
+    // 调用
+    this.init()
+  },
+  methods:{
+    // 查询医院等级列表 和 所有地区列表
+    init(){
+      // 查询医院等级列表
+        dictApi.findByDictcode('Hostype')
+        .then( response => {
+          // hostypeList清空
+          this.hostypeList = []
+          // 向hostypeList添加全部值
+          this.hostypeList.push({"name":"全部", "value":""})
+          // 把接口返回数据，添加到hostypeList
+          for(let i=0; i<response.data.length; i++){
+            this.hostypeList.push(response.data[i])
+          }
+        })
+        // 查询地区数据
+        dictApi.findByDictcode("北京")
+        .then(response => {
+          this.districtList = []
+          this.districtList.push({"name":"全部", "value":""})
+          for(let i in response.data){
+            this.districtList.push(response.data[i])
+          }
+        })
+    }
+  }
+
 }
 </script>
