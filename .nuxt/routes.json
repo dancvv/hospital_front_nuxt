@@ -2,8 +2,8 @@
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/weivang/VisualStudioCode/yygh-site/pages/index.vue",
+    "component": "/home/w/VisualStudioCode/hospital_front_nuxt/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_4cd63ec7"
+    "_name": "_e53b985e"
   }
 ]

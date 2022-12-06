@@ -25,29 +25,14 @@
             <div class="filter-wrapper">
               <span class="label">等级：</span>
               <div class="condition-wrapper">
-                <span  class="item v-link highlight clickable selected"> 全部 </span>
+                <span v-for="(item, index) in hostypeList" :key="index" class="item v-link highlight clickable selected"> {{item.name}} </span>
               </div>
             </div>
             <div class="filter-wrapper">
               <span class="label">地区：</span>
-              <div class="condition-wrapper"><span class="item v-link highlight clickable selected">
-                  全部 </span><span class="item v-link clickable">
-                  东城区 </span><span class="item v-link clickable">
-                  西城区 </span><span class="item v-link clickable">
-                  朝阳区 </span><span class="item v-link clickable">
-                  丰台区 </span><span class="item v-link clickable">
-                  石景山区 </span><span class="item v-link clickable">
-                  海淀区 </span><span class="item v-link clickable">
-                  门头沟区 </span><span class="item v-link clickable">
-                  房山区 </span><span class="item v-link clickable">
-                  通州区 </span><span class="item v-link clickable">
-                  顺义区 </span><span class="item v-link clickable">
-                  昌平区 </span><span class="item v-link clickable">
-                  大兴区 </span><span class="item v-link clickable">
-                  怀柔区 </span><span class="item v-link clickable">
-                  平谷区 </span><span class="item v-link clickable">
-                  密云区 </span><span class="item v-link clickable">
-                  延庆区 </span></div>
+                <div class="condition-wrapper">
+                  <span v-for="(item, index) in districtList" :key="index" class="item v-link highlight clickable selected"> {{item.name}} </span>
+                </div>
             </div>
           </div>
         </div>
