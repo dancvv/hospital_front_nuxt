@@ -37,60 +37,25 @@
           </div>
         </div>
         <div class="v-scroll-list hospital-list">
-          <div class="v-card clickable list-item">
+          <div v-for="(item, index) in list" :key="index" class="v-card clickable list-item">
             <div class="">
               <div class="hospital-list-item hos-item" index="0">
                 <div class="wrapper">
-                  <div class="hospital-title"> 北京协和医院
-                  </div>
+                  <div class="hospital-title"> {{item.name}} </div>
                   <div class="bottom-container">
-                    <div class="icon-wrapper"><span class="iconfont"></span>
-                      三级甲等
+                    <div class="icon-wrapper">
+                      <span class="iconfont"></span>
+                      {{item.param.hostype}}
                     </div>
-                    <div class="icon-wrapper"><span class="iconfont"></span>
-                      每天8:30放号
+                    <div class="icon-wrapper">
+                      <span class="iconfont"></span>
+                      {{item.bookingRule.releaseTime}}
                     </div>
                   </div>
                 </div>
-                <img src="images/23176337663806575.png" alt="北京协和医院" class="hospital-img">
-              </div>
-            </div>
-          </div>
-          <div class="v-card clickable list-item space">
-            <div class="">
-              <div class="hospital-list-item hos-item" index="0">
-                <div class="wrapper">
-                  <div class="hospital-title"> 北京协和医院
-                  </div>
-                  <div class="bottom-container">
-                    <div class="icon-wrapper"><span class="iconfont"></span>
-                      三级甲等
-                    </div>
-                    <div class="icon-wrapper"><span class="iconfont"></span>
-                      每天8:30放号
-                    </div>
-                  </div>
-                </div>
-                <img src="images/23176337663806575.png" alt="北京协和医院" class="hospital-img">
-              </div>
-            </div>
-          </div>
-          <div class="v-card clickable list-item">
-            <div class="">
-              <div class="hospital-list-item hos-item" index="0">
-                <div class="wrapper">
-                  <div class="hospital-title"> 北京协和医院
-                  </div>
-                  <div class="bottom-container">
-                    <div class="icon-wrapper"><span class="iconfont"></span>
-                      三级甲等
-                    </div>
-                    <div class="icon-wrapper"><span class="iconfont"></span>
-                      每天8:30放号
-                    </div>
-                  </div>
-                </div>
-                <img src="images/23176337663806575.png" alt="北京协和医院" class="hospital-img">
+                <img :src="'data:image/jpeg;base64,' + item.logoData"
+                  :alt="item.hosname" class="hospital-img"
+                >
               </div>
             </div>
           </div>
@@ -180,7 +145,7 @@ import dictApi from '@/api/dict'
 export default {
   // 服务端渲染,显示医院列表
   asyncData({params, error}){
-    // 调用
+    // // 调用
     return hospApi.getPageList(1, 10, null)
     .then(response => {
       return {
@@ -188,6 +153,12 @@ export default {
         pages: response.data.totalPages
       }
     })
+    // return axios({
+    //   url: `http://localhost/admin/cmn/dict/findByDictCode/beijin`,
+    //   method: 'get'
+    // }).then(response => {
+    //   console.log(response)
+    // })
   },
   data(){
      return{
@@ -212,7 +183,7 @@ export default {
     // 查询医院等级列表 和 所有地区列表
     init(){
       // 查询医院等级列表
-        dictApi.findByDictcode('Hostype')
+        dictApi.findByDictCode('Hostype')
         .then( response => {
           // hostypeList清空
           this.hostypeList = []
@@ -224,7 +195,7 @@ export default {
           }
         })
         // 查询地区数据
-        dictApi.findByDictcode("北京")
+        dictApi.findByDictCode("beijin")
         .then(response => {
           this.districtList = []
           this.districtList.push({"name":"全部", "value":""})

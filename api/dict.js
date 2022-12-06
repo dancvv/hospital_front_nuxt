@@ -1,7 +1,7 @@
 
 import request from '@/utils/request'
 
-const api_name = `/api/cmn/hospital`
+const api_name = `/admin/cmn/dict`
 export default{
     // 根据dictCode获取下级节点
     findByDictCode(dictcode){
