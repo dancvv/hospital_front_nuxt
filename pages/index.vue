@@ -25,23 +25,23 @@
             <div class="filter-wrapper">
               <span class="label">等级：</span>
               <div class="condition-wrapper">
-                <span v-for="(item, index) in hostypeList" :key="index" class="item v-link highlight clickable selected"> {{item.name}} </span>
+                <span class="item v-link clickable" v-for="(item, index) in hostypeList" :key="index" :class="hostypeActiveIndex == index ? 'selected' : ''" @click="hostypeSelect(item.value, index)"> {{item.name}} </span>
               </div>
             </div>
             <div class="filter-wrapper">
               <span class="label">地区：</span>
                 <div class="condition-wrapper">
-                  <span v-for="(item, index) in districtList" :key="index" class="item v-link highlight clickable selected"> {{item.name}} </span>
+                  <span v-for="(item, index) in districtList" :key="index"  class="item v-link clickable " :class="provinceActiveIndex == index ? 'selected' : ''" @click="districtSelect(item.value, index)"> {{item.name}} </span>
                 </div>
             </div>
           </div>
         </div>
         <div class="v-scroll-list hospital-list">
-          <div v-for="(item, index) in list" :key="index" class="v-card clickable list-item">
+          <div v-for="(item, index) in list" :key="index" class="v-card clickable list-item" @click="show(item.hoscode)">
             <div class="">
               <div class="hospital-list-item hos-item" index="0">
                 <div class="wrapper">
-                  <div class="hospital-title"> {{item.name}} </div>
+                  <div class="hospital-title"> {{item.hosname}} </div>
                   <div class="bottom-container">
                     <div class="icon-wrapper">
                       <span class="iconfont"></span>
@@ -49,7 +49,7 @@
                     </div>
                     <div class="icon-wrapper">
                       <span class="iconfont"></span>
-                      {{item.bookingRule.releaseTime}}
+                      {{item.bookingRule.releaseTime}}放开
                     </div>
                   </div>
                 </div>
@@ -166,6 +166,8 @@ export default {
       page: 1,
       limit: 10,
 
+      state:'',
+
       hosname: '', //医院名称
       hostypeList: [], //医院等级集合
       districtList: [], //地区集合
@@ -203,7 +205,62 @@ export default {
             this.districtList.push(response.data[i])
           }
         })
+      },
+      //查询医院列表
+    getList() {
+      hospApi.getPageList(this.page,this.limit,this.searchObj)
+        .then(response => {
+          for(let i in response.data.content) {
+            this.list.push(response.data.content[i])
+          }
+          this.page = response.data.totalPages
+        })
+    },
+
+    //根据医院等级查询
+    hostypeSelect(hostype,index) {
+      //准备数据
+      this.list = []
+      this.page = 1
+      this.hostypeActiveIndex = index
+      this.searchObj.hostype = hostype
+      //调用查询医院列表方法
+      this.getList()
+    },
+    //根据地区查询医院
+    districtSelect(districtCode, index) {
+      this.list = []
+      this.page = 1
+      this.provinceActiveIndex = index
+      this.searchObj.districtCode = districtCode
+      this.getList();
+    },
+
+      //在输入框输入值，弹出下拉框，显示相关内容
+      querySearchAsync(queryString, cb) {
+        this.searchObj = []
+        if(queryString == '') return
+        hospApi.getByHospname(queryString).then(response => {
+          for (let i = 0, len = response.data.length; i <len; i++) {
+            response.data[i].value = response.data[i].hosname
+          }
+          cb(response.data)
+        })
+      },
+      //在下拉框选择某一个内容，执行下面方法，跳转到详情页面中
+      handleSelect(item){
+        window.location.href = '/hospital/' + item.hoscode
+        console.log(item)
+      },
+      //点击某个医院名称，跳转到详情页面中
+    show(hoscode) {
+      console.log(hoscode)
+      window.location.href = '/hospital/' + hoscode
     }
+
+
+
+
   }
 
 }

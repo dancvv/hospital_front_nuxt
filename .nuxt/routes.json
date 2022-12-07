@@ -3,7 +3,6 @@
     "name": "index",
     "path": "/",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_046b8e9c"
+    "chunkName": "pages/index"
   }
 ]
