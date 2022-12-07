@@ -4,6 +4,10 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _7cabb677 = () => interopDefault(import('../pages/hosp/index.vue' /* webpackChunkName: "pages/hosp/index" */))
+const _0e2fd546 = () => interopDefault(import('../pages/hosp/detail/_hoscode.vue' /* webpackChunkName: "pages/hosp/detail/_hoscode" */))
+const _739caa36 = () => interopDefault(import('../pages/hosp/notice/_hoscode.vue' /* webpackChunkName: "pages/hosp/notice/_hoscode" */))
+const _a7674536 = () => interopDefault(import('../pages/hosp/_hoscode.vue' /* webpackChunkName: "pages/hosp/_hoscode" */))
 const _046b8e9c = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -18,6 +22,22 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/hosp",
+    component: _7cabb677,
+    name: "hosp"
+  }, {
+    path: "/hosp/detail/:hoscode?",
+    component: _0e2fd546,
+    name: "hosp-detail-hoscode"
+  }, {
+    path: "/hosp/notice/:hoscode?",
+    component: _739caa36,
+    name: "hosp-notice-hoscode"
+  }, {
+    path: "/hosp/:hoscode",
+    component: _a7674536,
+    name: "hosp-hoscode"
+  }, {
     path: "/",
     component: _046b8e9c,
     name: "index"

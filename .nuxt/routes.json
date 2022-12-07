@@ -1,8 +1,37 @@
 [
   {
+    "name": "hosp",
+    "path": "/hosp",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/hosp/index.vue",
+    "chunkName": "pages/hosp/index",
+    "_name": "_7cabb677"
+  },
+  {
+    "name": "hosp-detail-hoscode",
+    "path": "/hosp/detail/:hoscode?",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/hosp/detail/_hoscode.vue",
+    "chunkName": "pages/hosp/detail/_hoscode",
+    "_name": "_0e2fd546"
+  },
+  {
+    "name": "hosp-notice-hoscode",
+    "path": "/hosp/notice/:hoscode?",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/hosp/notice/_hoscode.vue",
+    "chunkName": "pages/hosp/notice/_hoscode",
+    "_name": "_739caa36"
+  },
+  {
+    "name": "hosp-hoscode",
+    "path": "/hosp/:hoscode",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/hosp/_hoscode.vue",
+    "chunkName": "pages/hosp/_hoscode",
+    "_name": "_a7674536"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_046b8e9c"
   }
 ]
