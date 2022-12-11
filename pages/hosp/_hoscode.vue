@@ -165,6 +165,7 @@
 import '~/assets/css/hospital_personal.css'
 import '~/assets/css/hospital.css'
 
+import cookie from 'js-cookie'
 import hospApi from '@/api/hosp'
 export default {
     data(){
@@ -186,6 +187,15 @@ export default {
         this.init()
     },
     methods:{
+      schedule(depcode){
+        // 登录判断
+        let token = cookie.get('token')
+        if(!token){
+          loginEvent.$emit("loginDialogEvent")
+          return
+        }
+        window.location.href = '/hospital/schedule?hoscode=' + this.hospital.hoscode + "&depcode" + depcode
+      },
         init(){
             // 根据医院编号查询详情
             hospApi.show(this.hoscode).then(
