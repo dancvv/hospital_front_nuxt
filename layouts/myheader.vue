@@ -1,13 +1,13 @@
 <template>
-    <div class="header-container">
-        <div class="wrapper">
-            <!-- logo -->
-            <div class="left-wrapper v-link selected">
-                <img style="width: 50px" width="50" height="50" src="~assets/images/logo.png">
-                <span class="text">尚医通 预约挂号统一平台</span>
-            </div>
-            <!-- 搜索框 -->
-            <!-- <div class="search-wrapper">
+  <div class="header-container">
+    <div class="wrapper">
+      <!-- logo -->
+      <div class="left-wrapper v-link selected">
+        <img style="width: 50px" width="50" height="50" src="~assets/images/logo.png">
+        <span class="text">尚医通 预约挂号统一平台</span>
+      </div>
+      <!-- 搜索框 -->
+      <!-- <div class="search-wrapper">
                 <div class="hospital-search animation-show">
                     <el-autocomplete class="search-input small" prefix-icon="el-icon-search" v-model="state"
                         :fetch-suggestions="querySearchAsync" placeholder="点击输入医院名称" @select="handleSelect">
@@ -15,90 +15,92 @@
                     </el-autocomplete>
                 </div>
             </div> -->
-            <!-- 右侧 -->
-            <!-- 右侧 -->
-            <div class="right-wrapper">
-                <span class="v-link clickable">帮助中心</span>
-                <span v-if="name == ''" class="v-link clickable" @click="showLogin()" id="loginDialog">登录/注册</span>
-                <el-dropdown v-if="name != ''" @command="loginMenu">
-                    <span class="el-dropdown-link">
-                        {{ name }}<i class="el-icon-arrow-down el-icon--right"></i>
-                    </span>
-                <el-dropdown-menu class="user-name-wrapper" slot="dropdown">
-                    <el-dropdown-item command="/user">实名认证</el-dropdown-item>
-                    <el-dropdown-item command="/order">挂号订单</el-dropdown-item>
-                    <el-dropdown-item command="/patient">就诊人管理</el-dropdown-item>
-                    <el-dropdown-item command="/logout" divided>退出登录</el-dropdown-item>
-                </el-dropdown-menu>
-                </el-dropdown>
-            </div>
-        </div>
-         <!-- 登录弹出层 -->
-    <el-dialog :visible.sync="dialogUserFormVisible" style="text-align: left;" top="50px" :append-to-body="true"  width="960px" @close="closeDialog()">
-        <div class="container">
-  
-          <!-- 手机登录 #start -->
-          <div class="operate-view" v-if="dialogAtrr.showLoginType === 'phone'">
-            <div class="wrapper" style="width: 100%">
-              <div class="mobile-wrapper" style="position: static;width: 70%">
-                <span class="title">{{ dialogAtrr.labelTips }}</span>
-                <el-form>
-                  <el-form-item>
-                    <el-input v-model="dialogAtrr.inputValue" :placeholder="dialogAtrr.placeholder" :maxlength="dialogAtrr.maxlength" class="input v-input">
-                      <span slot="suffix" class="sendText v-link" v-if="dialogAtrr.second > 0">{{ dialogAtrr.second }}s </span>
-                      <span slot="suffix" class="sendText v-link highlight clickable selected" v-if="dialogAtrr.second == 0" @click="getCodeFun()">重新发送 </span>
-                    </el-input>
-                  </el-form-item>
-                </el-form>
-                <div class="send-button v-button" @click="btnClick()"> {{ dialogAtrr.loginBtn }}</div>
-              </div>
-              <div class="bottom">
-                <div class="wechat-wrapper" @click="weixinLogin()"><span
-                  class="iconfont icon"></span></div>
-                <span class="third-text"> 第三方账号登录 </span></div>
-            </div>
-          </div>
-          <!-- 手机登录 #end -->
-  
-          <!-- 微信登录 #start -->
-          <div class="operate-view"  v-if="dialogAtrr.showLoginType === 'weixin'" >
-            <div class="wrapper wechat" style="height: 400px">
-              <div>
-                <div id="weixinLogin"></div>
-              </div>
-              <div class="bottom wechat" style="margin-top: -80px;">
-                <div class="phone-container">
-                  <div class="phone-wrapper"  @click="phoneLogin()"><span
-                    class="iconfont icon"></span></div>
-                  <span class="third-text"> 手机短信验证码登录 </span></div>
-              </div>
-            </div>
-          </div>
-          <!-- 微信登录 #end -->
-  
-          <div class="info-wrapper">
-            <div class="code-wrapper">
-              <div><img src="//img.114yygh.com/static/web/code_login_wechat.png" class="code-img">
-                <div class="code-text"><span class="iconfont icon"></span>微信扫一扫关注
-                </div>
-                <div class="code-text"> “快速预约挂号”</div>
-              </div>
-              <div class="wechat-code-wrapper"><img
-                src="//img.114yygh.com/static/web/code_app.png"
-                class="code-img">
-                <div class="code-text"> 扫一扫下载</div>
-                <div class="code-text"> “预约挂号”APP</div>
-              </div>
-            </div>
-            <div class="slogan">
-              <div>xxxxxx官方指定平台</div>
-              <div>快速挂号 安全放心</div>
-            </div>
-          </div>
-        </div>
-      </el-dialog>
-
+      <!-- 右侧 -->
+      <!-- 右侧 -->
+      <div class="right-wrapper">
+        <span class="v-link clickable">帮助中心</span>
+        <span v-if="name == ''" class="v-link clickable" @click="showLogin()" id="loginDialog">登录/注册</span>
+        <el-dropdown v-if="name != ''" @command="loginMenu">
+          <span class="el-dropdown-link">
+            {{ name }}<i class="el-icon-arrow-down el-icon--right"></i>
+          </span>
+          <el-dropdown-menu class="user-name-wrapper" slot="dropdown">
+            <el-dropdown-item command="/user">实名认证</el-dropdown-item>
+            <el-dropdown-item command="/order">挂号订单</el-dropdown-item>
+            <el-dropdown-item command="/patient">就诊人管理</el-dropdown-item>
+            <el-dropdown-item command="/logout" divided>退出登录</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </div>
     </div>
+    <!-- 登录弹出层 -->
+    <el-dialog :visible.sync="dialogUserFormVisible" style="text-align: left;" top="50px" :append-to-body="true"
+      width="960px" @close="closeDialog()">
+      <div class="container">
+
+        <!-- 手机登录 #start -->
+        <div class="operate-view" v-if="dialogAtrr.showLoginType === 'phone'">
+          <div class="wrapper" style="width: 100%">
+            <div class="mobile-wrapper" style="position: static;width: 70%">
+              <span class="title">{{ dialogAtrr.labelTips }}</span>
+              <el-form>
+                <el-form-item>
+                  <el-input v-model="dialogAtrr.inputValue" :placeholder="dialogAtrr.placeholder"
+                    :maxlength="dialogAtrr.maxlength" class="input v-input">
+                    <span slot="suffix" class="sendText v-link" v-if="dialogAtrr.second > 0">{{ dialogAtrr.second }}s
+                    </span>
+                    <span slot="suffix" class="sendText v-link highlight clickable selected"
+                      v-if="dialogAtrr.second == 0" @click="getCodeFun()">重新发送 </span>
+                  </el-input>
+                </el-form-item>
+              </el-form>
+              <div class="send-button v-button" @click="btnClick()"> {{ dialogAtrr.loginBtn }}</div>
+            </div>
+            <div class="bottom">
+              <div class="wechat-wrapper" @click="weixinLogin()"><span class="iconfont icon"></span></div>
+              <span class="third-text"> 第三方账号登录 </span>
+            </div>
+          </div>
+        </div>
+        <!-- 手机登录 #end -->
+
+        <!-- 微信登录 #start -->
+        <div class="operate-view" v-if="dialogAtrr.showLoginType === 'weixin'">
+          <div class="wrapper wechat" style="height: 400px">
+            <div>
+              <div id="weixinLogin"></div>
+            </div>
+            <div class="bottom wechat" style="margin-top: -80px;">
+              <div class="phone-container">
+                <div class="phone-wrapper" @click="phoneLogin()"><span class="iconfont icon"></span></div>
+                <span class="third-text"> 手机短信验证码登录 </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 微信登录 #end -->
+
+        <div class="info-wrapper">
+          <div class="code-wrapper">
+            <div><img src="//img.114yygh.com/static/web/code_login_wechat.png" class="code-img">
+              <div class="code-text"><span class="iconfont icon"></span>微信扫一扫关注
+              </div>
+              <div class="code-text"> “快速预约挂号”</div>
+            </div>
+            <div class="wechat-code-wrapper"><img src="//img.114yygh.com/static/web/code_app.png" class="code-img">
+              <div class="code-text"> 扫一扫下载</div>
+              <div class="code-text"> “预约挂号”APP</div>
+            </div>
+          </div>
+          <div class="slogan">
+            <div>xxxxxx官方指定平台</div>
+            <div>快速挂号 安全放心</div>
+          </div>
+        </div>
+      </div>
+    </el-dialog>
+
+  </div>
 </template>
 <script>
 import cookie from 'js-cookie'
@@ -135,7 +137,7 @@ export default {
 
       dialogUserFormVisible: false,
       // 弹出层相关属性
-      dialogAtrr:defaultDialogAtrr,
+      dialogAtrr: defaultDialogAtrr,
 
       name: '' // 用户登录显示的名称
     }
@@ -144,12 +146,12 @@ export default {
   created() {
     this.showInfo()
   },
-  mounted(){
+  mounted() {
     // 注册全局登录事件对象
     window.loginEvent = new Vue();
     // 监听登录事件
-    loginEvent.$on('loginDialogEvent', function(){
-        document.getElementById("loginDialog").click();
+    loginEvent.$on('loginDialogEvent', function () {
+      document.getElementById("loginDialog").click();
     })
     // 触发事件
     // 初始化微信js
@@ -162,12 +164,26 @@ export default {
     window["loginCallback"] = (name, token, openid) => {
       self.loginCallback(name, token, openid)
     }
+
   },
   methods: {
+    // 微信回调的方法
+    // 微信登录回调处理
+    loginCallback(name, token, openid) {
+      // 打开手机登录层，绑定手机号，改逻辑与手机登录一致
+      if (openid != '') {
+        this.userInfo.openid = openid
+        this.showLogin()
+      } else {
+        this.setCookies(name, token)
+      }
+
+
+    },
     // 绑定登录或获取验证码按钮
     btnClick() {
       // 判断是获取验证码还是登录
-      if(this.dialogAtrr.loginBtn == '获取验证码') {
+      if (this.dialogAtrr.loginBtn == '获取验证码') {
         this.userInfo.phone = this.dialogAtrr.inputValue
 
         // 获取验证码
@@ -190,7 +206,7 @@ export default {
     login() {
       this.userInfo.code = this.dialogAtrr.inputValue
 
-      if(this.dialogAtrr.loginBtn == '正在提交...') {
+      if (this.dialogAtrr.loginBtn == '正在提交...') {
         this.$message.error('重复提交')
         return;
       }
@@ -248,7 +264,7 @@ export default {
 
     // 倒计时
     timeDown() {
-      if(this.clearSmsTime) {
+      if (this.clearSmsTime) {
         clearInterval(this.clearSmsTime);
       }
       this.dialogAtrr.second = 60;
@@ -266,7 +282,7 @@ export default {
 
     // 关闭登录层
     closeDialog() {
-      if(this.clearSmsTime) {
+      if (this.clearSmsTime) {
         clearInterval(this.clearSmsTime);
       }
     },
@@ -280,9 +296,9 @@ export default {
     },
 
     loginMenu(command) {
-      if('/logout' == command) {
-        cookie.set('name', '', {domain: 'localhost'})
-        cookie.set('token', '', {domain: 'localhost'})
+      if ('/logout' == command) {
+        cookie.set('name', '', { domain: 'localhost' })
+        cookie.set('token', '', { domain: 'localhost' })
 
         //跳转页面
         window.location.href = '/'
@@ -305,32 +321,32 @@ export default {
     },
     // 微信登录方法
     loginCallback(name, token, openid) {
-    // 打开手机登录层，绑定手机号，改逻辑与手机登录一致
-    if(openid != '') {
-       this.userInfo.openid = openid
-       this.showLogin()
-    } else {
-       this.setCookies(name, token)
-    }
-},
+      // 打开手机登录层，绑定手机号，改逻辑与手机登录一致
+      if (openid != '') {
+        this.userInfo.openid = openid
+        this.showLogin()
+      } else {
+        this.setCookies(name, token)
+      }
+    },
 
-weixinLogin() {
-  this.dialogAtrr.showLoginType = 'weixin'
+    weixinLogin() {
+      this.dialogAtrr.showLoginType = 'weixin'
 
-  // 初始化微信参数
-  weixinApi.getLoginParam().then(response => {
-    var obj = new WxLogin({
-      self_redirect:true,
-      id: 'weixinLogin', // 需要显示的容器id
-      appid: response.data.appid, // 公众号appid wx*******
-      scope: response.data.scope, // 网页默认即可
-      redirect_uri: response.data.redirectUri, // 授权成功后回调的url
-      state: response.data.state, // 可设置为简单的随机数加session用来校验
-      style: 'black', // 提供"black"、"white"可选。二维码的样式
-      href: '' // 外部css文件url，需要https
-    })
-  })
-},
+      // 初始化微信参数
+      weixinApi.getLoginParam().then(response => {
+        var obj = new WxLogin({
+          self_redirect: true,
+          id: 'weixinLogin', // 需要显示的容器id
+          appid: response.data.appid, // 公众号appid wx*******
+          scope: response.data.scope, // 网页默认即可
+          redirect_uri: response.data.redirectUri, // 授权成功后回调的url
+          state: response.data.state, // 可设置为简单的随机数加session用来校验
+          style: 'black', // 提供"black"、"white"可选。二维码的样式
+          href: '' // 外部css文件url，需要https
+        })
+      })
+    },
 
   }
 }
