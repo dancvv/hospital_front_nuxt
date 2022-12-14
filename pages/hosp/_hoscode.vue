@@ -167,6 +167,8 @@ import '~/assets/css/hospital.css'
 
 import cookie from 'js-cookie'
 import hospApi from '@/api/hosp'
+import userInfoApi from '@/api/userInfo'
+
 export default {
     data(){
         return{
@@ -194,6 +196,15 @@ export default {
           loginEvent.$emit("loginDialogEvent")
           return
         }
+        // judge the user complete the auth
+        userInfoApi.getUserInfo().then(response => {
+          let authStatus = response.data.authStatus
+          // it is not equals to 2, not success
+          if(!authStatus || authStatus != 2){
+            window.location.href = "/user"
+            return
+          }
+        })
         window.location.href = '/hospital/schedule?hoscode=' + this.hospital.hoscode + "&depcode" + depcode
       },
         init(){
