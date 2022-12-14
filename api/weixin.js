@@ -8,5 +8,5 @@ export default {
             url: `${api_name}/getLoginParam`,
             method: `get`
         })
-    }
+    },
 }

@@ -16,6 +16,7 @@ export default {
         let openid = this.$route.query.openid
         // 调用父vue方法
         window.parent['loginCallback'](name, token, openid)
+
     }
 }
 </script>

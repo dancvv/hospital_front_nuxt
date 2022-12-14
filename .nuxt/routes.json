@@ -7,6 +7,13 @@
     "_name": "_7cabb677"
   },
   {
+    "name": "user",
+    "path": "/user",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/user/index.vue",
+    "chunkName": "pages/user/index",
+    "_name": "_6d0d67de"
+  },
+  {
     "name": "weixin-callback",
     "path": "/weixin/callback",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/weixin/callback.vue",

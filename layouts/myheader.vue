@@ -8,13 +8,13 @@
       </div>
       <!-- 搜索框 -->
       <!-- <div class="search-wrapper">
-                <div class="hospital-search animation-show">
-                    <el-autocomplete class="search-input small" prefix-icon="el-icon-search" v-model="state"
-                        :fetch-suggestions="querySearchAsync" placeholder="点击输入医院名称" @select="handleSelect">
-                        <span slot="suffix" class="search-btn v-link highlight clickable selected">搜索 </span>
-                    </el-autocomplete>
-                </div>
-            </div> -->
+        <div class="hospital-search animation-show">
+          <el-autocomplete class="search-input small" prefix-icon="el-icon-search" v-model="state"
+            :fetch-suggestions="querySearchAsync" placeholder="点击输入医院名称" @select="handleSelect">
+            <span slot="suffix" class="search-btn v-link highlight clickable selected">搜索 </span>
+          </el-autocomplete>
+        </div>
+      </div> -->
       <!-- 右侧 -->
       <!-- 右侧 -->
       <div class="right-wrapper">
@@ -171,13 +171,12 @@ export default {
     // 微信登录回调处理
     loginCallback(name, token, openid) {
       // 打开手机登录层，绑定手机号，改逻辑与手机登录一致
-      if (openid != '') {
+      if (openid == null) {
         this.userInfo.openid = openid
         this.showLogin()
       } else {
         this.setCookies(name, token)
       }
-
 
     },
     // 绑定登录或获取验证码按钮
@@ -220,7 +219,6 @@ export default {
       }
       this.dialogAtrr.loginBtn = '正在提交...'
       userInfoApi.login(this.userInfo).then(response => {
-        console.log(response.data)
         // 登录成功 设置cookie
         this.setCookies(response.data.name, response.data.token)
       }).catch(e => {
@@ -291,7 +289,6 @@ export default {
       let token = cookie.get('token')
       if (token) {
         this.name = cookie.get('name')
-        console.log(this.name)
       }
     },
 
@@ -311,25 +308,10 @@ export default {
       window.location.href = '/hospital/' + item.hoscode
     },
 
-    weixinLogin() {
-      this.dialogAtrr.showLoginType = 'weixin'
-    },
-
     phoneLogin() {
       this.dialogAtrr.showLoginType = 'phone'
       this.showLogin()
     },
-    // 微信登录方法
-    loginCallback(name, token, openid) {
-      // 打开手机登录层，绑定手机号，改逻辑与手机登录一致
-      if (openid != '') {
-        this.userInfo.openid = openid
-        this.showLogin()
-      } else {
-        this.setCookies(name, token)
-      }
-    },
-
     weixinLogin() {
       this.dialogAtrr.showLoginType = 'weixin'
 
