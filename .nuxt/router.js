@@ -4,13 +4,14 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _ce825290 = () => interopDefault(import('../pages/hosp/index.vue' /* webpackChunkName: "pages/hosp/index" */))
-const _edbeefc2 = () => interopDefault(import('../pages/user/index.vue' /* webpackChunkName: "pages/user/index" */))
-const _6c23f8de = () => interopDefault(import('../pages/weixin/callback.vue' /* webpackChunkName: "pages/weixin/callback" */))
-const _84b6cf44 = () => interopDefault(import('../pages/hosp/detail/_hoscode.vue' /* webpackChunkName: "pages/hosp/detail/_hoscode" */))
-const _38592d37 = () => interopDefault(import('../pages/hosp/notice/_hoscode.vue' /* webpackChunkName: "pages/hosp/notice/_hoscode" */))
-const _7bfa6cf8 = () => interopDefault(import('../pages/hosp/_hoscode.vue' /* webpackChunkName: "pages/hosp/_hoscode" */))
-const _e53b985e = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _7cabb677 = () => interopDefault(import('../pages/hosp/index.vue' /* webpackChunkName: "pages/hosp/index" */))
+const _1cb0de28 = () => interopDefault(import('../pages/patient/index.vue' /* webpackChunkName: "pages/patient/index" */))
+const _6d0d67de = () => interopDefault(import('../pages/user/index.vue' /* webpackChunkName: "pages/user/index" */))
+const _48222332 = () => interopDefault(import('../pages/weixin/callback.vue' /* webpackChunkName: "pages/weixin/callback" */))
+const _0e2fd546 = () => interopDefault(import('../pages/hosp/detail/_hoscode.vue' /* webpackChunkName: "pages/hosp/detail/_hoscode" */))
+const _739caa36 = () => interopDefault(import('../pages/hosp/notice/_hoscode.vue' /* webpackChunkName: "pages/hosp/notice/_hoscode" */))
+const _a7674536 = () => interopDefault(import('../pages/hosp/_hoscode.vue' /* webpackChunkName: "pages/hosp/_hoscode" */))
+const _046b8e9c = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -25,31 +26,35 @@ export const routerOptions = {
 
   routes: [{
     path: "/hosp",
-    component: _ce825290,
+    component: _7cabb677,
     name: "hosp"
   }, {
+    path: "/patient",
+    component: _1cb0de28,
+    name: "patient"
+  }, {
     path: "/user",
-    component: _edbeefc2,
+    component: _6d0d67de,
     name: "user"
   }, {
     path: "/weixin/callback",
-    component: _6c23f8de,
+    component: _48222332,
     name: "weixin-callback"
   }, {
     path: "/hosp/detail/:hoscode?",
-    component: _84b6cf44,
+    component: _0e2fd546,
     name: "hosp-detail-hoscode"
   }, {
     path: "/hosp/notice/:hoscode?",
-    component: _38592d37,
+    component: _739caa36,
     name: "hosp-notice-hoscode"
   }, {
     path: "/hosp/:hoscode",
-    component: _7bfa6cf8,
+    component: _a7674536,
     name: "hosp-hoscode"
   }, {
     path: "/",
-    component: _e53b985e,
+    component: _046b8e9c,
     name: "index"
   }],
 

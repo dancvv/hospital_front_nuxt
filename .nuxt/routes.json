@@ -2,50 +2,57 @@
   {
     "name": "hosp",
     "path": "/hosp",
-    "component": "/home/w/VisualStudioCode/hospital_front_nuxt/pages/hosp/index.vue",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/hosp/index.vue",
     "chunkName": "pages/hosp/index",
-    "_name": "_ce825290"
+    "_name": "_7cabb677"
+  },
+  {
+    "name": "patient",
+    "path": "/patient",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/patient/index.vue",
+    "chunkName": "pages/patient/index",
+    "_name": "_1cb0de28"
   },
   {
     "name": "user",
     "path": "/user",
-    "component": "/home/w/VisualStudioCode/hospital_front_nuxt/pages/user/index.vue",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/user/index.vue",
     "chunkName": "pages/user/index",
-    "_name": "_edbeefc2"
+    "_name": "_6d0d67de"
   },
   {
     "name": "weixin-callback",
     "path": "/weixin/callback",
-    "component": "/home/w/VisualStudioCode/hospital_front_nuxt/pages/weixin/callback.vue",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/weixin/callback.vue",
     "chunkName": "pages/weixin/callback",
-    "_name": "_6c23f8de"
+    "_name": "_48222332"
   },
   {
     "name": "hosp-detail-hoscode",
     "path": "/hosp/detail/:hoscode?",
-    "component": "/home/w/VisualStudioCode/hospital_front_nuxt/pages/hosp/detail/_hoscode.vue",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/hosp/detail/_hoscode.vue",
     "chunkName": "pages/hosp/detail/_hoscode",
-    "_name": "_84b6cf44"
+    "_name": "_0e2fd546"
   },
   {
     "name": "hosp-notice-hoscode",
     "path": "/hosp/notice/:hoscode?",
-    "component": "/home/w/VisualStudioCode/hospital_front_nuxt/pages/hosp/notice/_hoscode.vue",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/hosp/notice/_hoscode.vue",
     "chunkName": "pages/hosp/notice/_hoscode",
-    "_name": "_38592d37"
+    "_name": "_739caa36"
   },
   {
     "name": "hosp-hoscode",
     "path": "/hosp/:hoscode",
-    "component": "/home/w/VisualStudioCode/hospital_front_nuxt/pages/hosp/_hoscode.vue",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/hosp/_hoscode.vue",
     "chunkName": "pages/hosp/_hoscode",
-    "_name": "_7bfa6cf8"
+    "_name": "_a7674536"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/w/VisualStudioCode/hospital_front_nuxt/pages/index.vue",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_e53b985e"
+    "_name": "_046b8e9c"
   }
 ]
