@@ -27,9 +27,9 @@ service.interceptors.request.use(
 service.interceptors.response.use(
     response => {
         // 如果状态码是208，前端统一做拦截
-        if(response.data.code == 208){
+        if(response.data.code === 208){
             // 弹出登录输入框
-            loginEvent.$emit('loginDialogEvent')
+            // loginEvent.$emit('loginDialogEvent')
             return
         }else {
             if (response.data.code !== 200) {

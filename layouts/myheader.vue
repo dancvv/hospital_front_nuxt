@@ -171,7 +171,13 @@ export default {
     // 微信登录回调处理
     loginCallback(name, token, openid) {
       // 打开手机登录层，绑定手机号，改逻辑与手机登录一致
-      if (openid == null) {
+      console.log("openid")
+      console.log(openid)
+      console.log(name)
+      console.log(token)
+      if (openid != null) {
+        console.log("this.userInfo")
+        console.log(this.userInfo)
         this.userInfo.openid = openid
         this.showLogin()
       } else {
@@ -199,6 +205,8 @@ export default {
 
       // 初始化登录层相关参数
       this.dialogAtrr = { ...defaultDialogAtrr }
+      console.log("showLogin")
+      console.log(this.dialogAtrr)
     },
 
     // 登录
@@ -219,6 +227,9 @@ export default {
       }
       this.dialogAtrr.loginBtn = '正在提交...'
       userInfoApi.login(this.userInfo).then(response => {
+        console.log("login method")
+        console.log("userInfo")
+        console.log(this.userInfo)
         // 登录成功 设置cookie
         this.setCookies(response.data.name, response.data.token)
       }).catch(e => {
