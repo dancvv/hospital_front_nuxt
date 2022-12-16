@@ -76,7 +76,6 @@ export default {
     methods: {
         findPatientList() {
             patientApi.findList().then(response => {
-                console.log(response)
                 this.patientList = response.data
             })
         },

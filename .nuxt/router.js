@@ -7,6 +7,8 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _7cabb677 = () => interopDefault(import('../pages/hosp/index.vue' /* webpackChunkName: "pages/hosp/index" */))
 const _1cb0de28 = () => interopDefault(import('../pages/patient/index.vue' /* webpackChunkName: "pages/patient/index" */))
 const _6d0d67de = () => interopDefault(import('../pages/user/index.vue' /* webpackChunkName: "pages/user/index" */))
+const _78f485f7 = () => interopDefault(import('../pages/patient/add.vue' /* webpackChunkName: "pages/patient/add" */))
+const _4498c8d2 = () => interopDefault(import('../pages/patient/show.vue' /* webpackChunkName: "pages/patient/show" */))
 const _48222332 = () => interopDefault(import('../pages/weixin/callback.vue' /* webpackChunkName: "pages/weixin/callback" */))
 const _0e2fd546 = () => interopDefault(import('../pages/hosp/detail/_hoscode.vue' /* webpackChunkName: "pages/hosp/detail/_hoscode" */))
 const _739caa36 = () => interopDefault(import('../pages/hosp/notice/_hoscode.vue' /* webpackChunkName: "pages/hosp/notice/_hoscode" */))
@@ -36,6 +38,14 @@ export const routerOptions = {
     path: "/user",
     component: _6d0d67de,
     name: "user"
+  }, {
+    path: "/patient/add",
+    component: _78f485f7,
+    name: "patient-add"
+  }, {
+    path: "/patient/show",
+    component: _4498c8d2,
+    name: "patient-show"
   }, {
     path: "/weixin/callback",
     component: _48222332,

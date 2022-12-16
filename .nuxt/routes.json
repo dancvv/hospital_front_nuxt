@@ -21,6 +21,20 @@
     "_name": "_6d0d67de"
   },
   {
+    "name": "patient-add",
+    "path": "/patient/add",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/patient/add.vue",
+    "chunkName": "pages/patient/add",
+    "_name": "_78f485f7"
+  },
+  {
+    "name": "patient-show",
+    "path": "/patient/show",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/patient/show.vue",
+    "chunkName": "pages/patient/show",
+    "_name": "_4498c8d2"
+  },
+  {
     "name": "weixin-callback",
     "path": "/weixin/callback",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/weixin/callback.vue",
