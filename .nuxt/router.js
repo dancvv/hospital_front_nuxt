@@ -7,6 +7,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _7cabb677 = () => interopDefault(import('../pages/hosp/index.vue' /* webpackChunkName: "pages/hosp/index" */))
 const _1cb0de28 = () => interopDefault(import('../pages/patient/index.vue' /* webpackChunkName: "pages/patient/index" */))
 const _6d0d67de = () => interopDefault(import('../pages/user/index.vue' /* webpackChunkName: "pages/user/index" */))
+const _46e2f682 = () => interopDefault(import('../pages/hosp/schedule.vue' /* webpackChunkName: "pages/hosp/schedule" */))
 const _78f485f7 = () => interopDefault(import('../pages/patient/add.vue' /* webpackChunkName: "pages/patient/add" */))
 const _4498c8d2 = () => interopDefault(import('../pages/patient/show.vue' /* webpackChunkName: "pages/patient/show" */))
 const _48222332 = () => interopDefault(import('../pages/weixin/callback.vue' /* webpackChunkName: "pages/weixin/callback" */))
@@ -38,6 +39,10 @@ export const routerOptions = {
     path: "/user",
     component: _6d0d67de,
     name: "user"
+  }, {
+    path: "/hosp/schedule",
+    component: _46e2f682,
+    name: "hosp-schedule"
   }, {
     path: "/patient/add",
     component: _78f485f7,

@@ -21,6 +21,13 @@
     "_name": "_6d0d67de"
   },
   {
+    "name": "hosp-schedule",
+    "path": "/hosp/schedule",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/hosp/schedule.vue",
+    "chunkName": "pages/hosp/schedule",
+    "_name": "_46e2f682"
+  },
+  {
     "name": "patient-add",
     "path": "/patient/add",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/patient/add.vue",

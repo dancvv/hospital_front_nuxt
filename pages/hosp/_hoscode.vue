@@ -172,6 +172,7 @@ import userInfoApi from '@/api/userInfo'
 export default {
     data(){
         return{
+            data: [],
             hoscode: null,
             activeIndex: 0,
 
@@ -205,7 +206,7 @@ export default {
             return
           }
         })
-        window.location.href = '/hospital/schedule?hoscode=' + this.hospital.hoscode + "&depcode" + depcode
+        window.location.href = '/hosp/schedule?hoscode=' + this.hospital.hoscode + "&depcode=" + depcode
       },
         init(){
             // 根据医院编号查询详情
