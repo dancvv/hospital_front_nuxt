@@ -4,35 +4,26 @@
     <!--左侧导航 #start -->
     <div class="nav left-nav">
       <div class="nav-item selected">
-        <span
-          class="v-link selected dark"
-          :onclick="
-            'javascript:window.location=\'/hosp/' + hospital.hoscode + '\''
-          "
-          >预约挂号
+        <span class="v-link selected dark" :onclick="
+          'javascript:window.location=\'/hosp/' + hospital.hoscode + '\''
+        ">预约挂号
         </span>
       </div>
       <div class="nav-item">
-        <span
-          class="v-link clickable dark"
-          :onclick="
-            'javascript:window.location=\'/hosp/detail/' +
-            hospital.hoscode +
-            '\''
-          "
-        >
+        <span class="v-link clickable dark" :onclick="
+          'javascript:window.location=\'/hosp/detail/' +
+          hospital.hoscode +
+          '\''
+        ">
           医院详情
         </span>
       </div>
       <div class="nav-item">
-        <span
-          class="v-link clickable dark"
-          :onclick="
-            'javascript:window.location=\'/hosp/notice/' +
-            hospital.hoscode +
-            '\''
-          "
-        >
+        <span class="v-link clickable dark" :onclick="
+          'javascript:window.location=\'/hosp/notice/' +
+          hospital.hoscode +
+          '\''
+        ">
           预约须知
         </span>
       </div>
@@ -56,35 +47,24 @@
           </div>
         </div>
         <div class="info-wrapper">
-          <img
-            class="hospital-img"
-            :src = "hospital.logoData"
-            :alt="hospital.hosname"
-          />
+          <img class="hospital-img" :src="hospital.logoData" :alt="hospital.hosname" />
           <div class="content-wrapper">
             <div>挂号规则</div>
             <div class="line">
               <div>
-                <span class="label">预约周期：</span
-                ><span>{{ bookingRule.cycle }}天</span>
+                <span class="label">预约周期：</span><span>{{ bookingRule.cycle }}天</span>
               </div>
               <div class="space">
-                <span class="label">放号时间：</span
-                ><span>{{ bookingRule.releaseTime }}</span>
+                <span class="label">放号时间：</span><span>{{ bookingRule.releaseTime }}</span>
               </div>
               <div class="space">
-                <span class="label">停挂时间：</span
-                ><span>{{ bookingRule.stopTime }}</span>
+                <span class="label">停挂时间：</span><span>{{ bookingRule.stopTime }}</span>
               </div>
             </div>
             <div class="line">
               <span class="label">退号时间：</span>
-              <span v-if="bookingRule.quitDay == -1"
-                >就诊前一工作日{{ bookingRule.quitTime }}前取消</span
-              >
-              <span v-if="bookingRule.quitDay == 0"
-                >就诊前当天{{ bookingRule.quitTime }}前取消</span
-              >
+              <span v-if="bookingRule.quitDay == -1">就诊前一工作日{{ bookingRule.quitTime }}前取消</span>
+              <span v-if="bookingRule.quitDay == 0">就诊前当天{{ bookingRule.quitTime }}前取消</span>
             </div>
             <div style="margin-top: 20px">医院预约规则</div>
             <div class="rule-wrapper">
@@ -99,56 +79,32 @@
           <div class="department-wrapper">
             <div class="hospital-department">
               <div class="dept-list-wrapper el-scrollbar" style="height: 100%">
-                <div
-                  class="dept-list el-scrollbar__wrap"
-                  style="margin-bottom: -17px; margin-right: -17px"
-                >
+                <div class="dept-list el-scrollbar__wrap" style="margin-bottom: -17px; margin-right: -17px">
                   <div class="el-scrollbar__view">
-                    <div
-                      class="sub-item"
-                      v-for="(item, index) in departmentVoList"
-                      :key="item.id"
-                      :class="index == activeIndex ? 'selected' : ''"
-                      @click="move(index, item.depcode)"
-                    >
+                    <div class="sub-item" v-for="(item, index) in departmentVoList" :key="item.id"
+                      :class="index == activeIndex ? 'selected' : ''" @click="move(index, item.depcode)">
                       {{ item.depname }}
                     </div>
                   </div>
                 </div>
                 <div class="el-scrollbar__bar is-horizontal">
-                  <div
-                    class="el-scrollbar__thumb"
-                    style="transform: translateX(0%)"
-                  ></div>
+                  <div class="el-scrollbar__thumb" style="transform: translateX(0%)"></div>
                 </div>
                 <div class="el-scrollbar__bar is-vertical">
-                  <div
-                    class="el-scrollbar__thumb"
-                    style="transform: translateY(0%); height: 91.4761%"
-                  ></div>
+                  <div class="el-scrollbar__thumb" style="transform: translateY(0%); height: 91.4761%"></div>
                 </div>
               </div>
             </div>
           </div>
           <div class="sub-dept-container">
-            <div
-              v-for="(item, index) in departmentVoList"
-              :key="item.id"
-              :class="index == 0 ? 'selected' : ''"
-              class="sub-dept-wrapper"
-              :id="item.depcode"
-            >
+            <div v-for="(item, index) in departmentVoList" :key="item.id" :class="index == 0 ? 'selected' : ''"
+              class="sub-dept-wrapper" :id="item.depcode">
               <div class="sub-title">
                 <div class="block selected"></div>
                 {{ item.depname }}
               </div>
               <div class="sub-item-wrapper">
-                <div
-                  v-for="it in item.children"
-                  :key="it.id"
-                  class="sub-item"
-                  @click="schedule(it.depcode)"
-                >
+                <div v-for="it in item.children" :key="it.id" class="sub-item" @click="schedule(it.depcode)">
                   <span class="v-link clickable">{{ it.depname }} </span>
                 </div>
               </div>
@@ -170,67 +126,67 @@ import hospApi from '@/api/hosp'
 import userInfoApi from '@/api/userInfo'
 
 export default {
-    data(){
-        return{
-            data: [],
-            hoscode: null,
-            activeIndex: 0,
+  data() {
+    return {
+      data: [],
+      hoscode: null,
+      activeIndex: 0,
 
-            hospital: {
-                param: {}
-            },
-            bookingRule : {},
-            departmentVoList : []
+      hospital: {
+        param: {}
+      },
+      bookingRule: {},
+      departmentVoList: []
 
-        }
-        },
-    created(){
-        // 获取路径hoscode
-        this.hoscode = this.$route.params.hoscode
-        this.init()
-    },
-    methods:{
-      schedule(depcode){
-        // 登录判断
-        let token = cookie.get('token')
-        if(!token){
-          loginEvent.$emit("loginDialogEvent")
+    }
+  },
+  created() {
+    // 获取路径hoscode
+    this.hoscode = this.$route.params.hoscode
+    this.init()
+  },
+  methods: {
+    schedule(depcode) {
+      // 登录判断
+      let token = cookie.get('token')
+      if (!token) {
+        loginEvent.$emit("loginDialogEvent")
+        return
+      }
+      // judge the user complete the auth
+      userInfoApi.getUserInfo().then(response => {
+        let authStatus = response.data.authStatus
+        // it is not equals to 2, not success
+        if (!authStatus || authStatus != 2) {
+          window.location.href = "/user"
           return
         }
-        // judge the user complete the auth
-        userInfoApi.getUserInfo().then(response => {
-          let authStatus = response.data.authStatus
-          // it is not equals to 2, not success
-          if(!authStatus || authStatus != 2){
-            window.location.href = "/user"
-            return
-          }
-        })
-        window.location.href = '/hosp/schedule?hoscode=' + this.hospital.hoscode + "&depcode=" + depcode
-      },
-        init(){
-            // 根据医院编号查询详情
-            hospApi.show(this.hoscode).then(
-                response => {
-                    this.hospital = response.data.hospital
-                    // 服务端图片渲染报错
-                    this.hospital.logoData = 'data:image/png;base64,' + response.data.hospital.logoData
-                    this.bookingRule = response.data.bookingRule
-                }
-            )
-
-            // 根据医院编号查询科室
-            hospApi.findDepartment(this.hoscode).then(
-                response => {
-                    this.departmentVoList = response.data
-                }
-            )
-        },
-        move(index, depcode){
-            this.activeIndex = index
-            document.getElementById(depcode).scrollIntoView();
+      })
+      window.location.href = '/hosp/schedule?hoscode=' + this.hospital.hoscode + "&depcode=" + depcode
+    },
+    init() {
+      // 根据医院编号查询详情
+      hospApi.show(this.hoscode).then(
+        response => {
+          this.hospital = response.data.hospital
+          // 服务端图片渲染报错
+          this.hospital.logoData = 'data:image/png;base64,' + response.data.hospital.logoData
+          this.bookingRule = response.data.bookingRule
         }
+      )
+
+      // 根据医院编号查询科室
+      hospApi.findDepartment(this.hoscode).then(
+        response => {
+          this.departmentVoList = response.data
+        }
+      )
+    },
+    move(index, depcode) {
+      this.activeIndex = index
+      document.getElementById(depcode).scrollIntoView();
     }
+  }
 }
 
 </script>
