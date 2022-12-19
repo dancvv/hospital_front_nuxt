@@ -48,5 +48,13 @@ export default{
         })
     },
     
+    // 根据id获取排班信息
+    getSchedule(id) {
+        return request({
+          url: `${api_name}/getSchedule/${id}`,
+          method: 'get'
+        })
+        }
+
 
 }
