@@ -186,8 +186,6 @@ export default {
         getBookingScheduleRule() {
             hospitalApi.getBookingScheduleRule(this.page, this.limit, this.hoscode, this.depcode).then(response => {
                 this.bookingScheduleList = response.data.bookingScheduleList
-                console.log(response.data)
-                console.log(response.data.bookingScheduleList)
                 this.total = response.data.total
                 this.baseMap = response.data.baseMap
 
@@ -238,8 +236,6 @@ export default {
 
         dealClass() {
             //处理样式
-            console.log("dealCLass")
-            console.log(this.bookingScheduleList)
             for (let i = 0; i < this.bookingScheduleList.length; i++) {
                 // depNumber -1:无号 0：约满 >0：有号
                 let curClass = this.bookingScheduleList[i].availableNumber == -1 ? 'gray space' : this.bookingScheduleList[i].availableNumber == 0 ? 'gray' : 'small small-space'
@@ -311,11 +307,10 @@ export default {
         },
 
         booking(scheduleId, availableNumber) {
-            debugger
             if (availableNumber == 0 || this.pageFirstStatus == -1) {
                 this.$message.error('不能预约')
             } else {
-                window.location.href = '/hospital/booking?scheduleId=' + scheduleId
+                window.location.href = '/hosp/booking?scheduleId=' + scheduleId
             }
         }
     }
