@@ -9,6 +9,7 @@ const _1cb0de28 = () => interopDefault(import('../pages/patient/index.vue' /* we
 const _6d0d67de = () => interopDefault(import('../pages/user/index.vue' /* webpackChunkName: "pages/user/index" */))
 const _039dab3e = () => interopDefault(import('../pages/hosp/booking.vue' /* webpackChunkName: "pages/hosp/booking" */))
 const _46e2f682 = () => interopDefault(import('../pages/hosp/schedule.vue' /* webpackChunkName: "pages/hosp/schedule" */))
+const _407ce124 = () => interopDefault(import('../pages/order/show.vue' /* webpackChunkName: "pages/order/show" */))
 const _78f485f7 = () => interopDefault(import('../pages/patient/add.vue' /* webpackChunkName: "pages/patient/add" */))
 const _4498c8d2 = () => interopDefault(import('../pages/patient/show.vue' /* webpackChunkName: "pages/patient/show" */))
 const _48222332 = () => interopDefault(import('../pages/weixin/callback.vue' /* webpackChunkName: "pages/weixin/callback" */))
@@ -48,6 +49,10 @@ export const routerOptions = {
     path: "/hosp/schedule",
     component: _46e2f682,
     name: "hosp-schedule"
+  }, {
+    path: "/order/show",
+    component: _407ce124,
+    name: "order-show"
   }, {
     path: "/patient/add",
     component: _78f485f7,

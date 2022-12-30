@@ -35,6 +35,13 @@
     "_name": "_46e2f682"
   },
   {
+    "name": "order-show",
+    "path": "/order/show",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/order/show.vue",
+    "chunkName": "pages/order/show",
+    "_name": "_407ce124"
+  },
+  {
     "name": "patient-add",
     "path": "/patient/add",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/patient/add.vue",

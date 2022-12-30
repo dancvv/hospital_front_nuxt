@@ -153,6 +153,7 @@ import '~/assets/css/hospital.css'
 
 import hospitalApi from '@/api/hosp'
 import patientApi from '@/api/patient'
+import orderInfoApi from '@/api/orderInfo'
 
 export default {
 
@@ -219,6 +220,8 @@ export default {
 
       this.submitBnt = '正在提交...'
       orderInfoApi.submitOrder(this.scheduleId, this.patient.id).then(response => {
+        console.log("submitOrder")
+        console.log(response.data)
         let orderId = response.data
         window.location.href = '/order/show?orderId=' + orderId
       }).catch(e => {
