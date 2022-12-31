@@ -44,7 +44,7 @@
                         <div>挂号信息</div>
                     </div>
                     <div class="info-form">
-                        <el-form ref="form" :model="form">
+                        <el-form ref="orderInfo" :model="orderInfo">
                             <el-form-item label="就诊人信息：">
                                 <div class="content"><span>{{ orderInfo.patientName }}</span></div>
                             </el-form-item>
@@ -104,7 +104,8 @@
                 <div class="operate-view" style="height: 350px;">
                     <div class="wrapper wechat">
                         <div>
-                            <img src="images/weixin.jpg" alt="">
+                            <!-- <img src="images/weixin.jpg" alt=""> -->
+                            <qriously :value="qrcode" :size="220" />
 
                             <div style="text-align: center;line-height: 25px;margin-bottom: 40px;">
                                 请使用微信扫一扫<br />
@@ -122,6 +123,7 @@
 import '~/assets/css/hospital_personal.css'
 import '~/assets/css/hospital.css'
 import orderInfoApi from '@/api/orderInfo'
+import weixinApi from '@/api/weixin'
 export default {
     data() {
         return {
@@ -131,6 +133,7 @@ export default {
             },
             dialogPayVisible: false,
             payObj: {},
+            qrcode: '',
             timer: null  // 定时器名称
         }
     },
@@ -138,7 +141,7 @@ export default {
         this.orderId = this.$route.query.orderId
         this.getOrderInfo()
     },
-    mounted(){
+    mounted() {
         // this.init()
     },
     methods: {
@@ -149,7 +152,39 @@ export default {
                     this.orderInfo = response.data
                 }
             )
+        },
+        pay() {
+            this.dialogPayVisible = true
+            weixinApi.createNative(this.orderId).then(response => {
+                this.payObj = response.data
+                console.log(response)
+                console.log(this.payObj.codeUrl)
+                this.qrcode = response.data.codeUrl
+                if (this.qrcode == '') {
+                    this.dialogPayVisible = false
+                    this.$message.error("支付错误")
+                } else {
+                    // this.timer = setInterval(() => {
+                    //     this.queryPayStatus(this.orderId)
+                    // }, 3000);
+                }
+            })
+        },
+        queryPayStatus(orderId) {
+            weixinApi.queryPayStatus(orderId).then(response => {
+                if (response.message == '支付中') {
+                    return
+                }
+                clearInterval(this.timer);
+                window.location.reload()
+            })
+        },
+        closeDialog() {
+            if (this.timer) {
+                clearInterval(this.timer);
+            }
         }
+
     }
 }
 </script>

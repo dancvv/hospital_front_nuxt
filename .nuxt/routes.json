@@ -7,6 +7,13 @@
     "_name": "_7cabb677"
   },
   {
+    "name": "order",
+    "path": "/order",
+    "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/order/index.vue",
+    "chunkName": "pages/order/index",
+    "_name": "_5c616531"
+  },
+  {
     "name": "patient",
     "path": "/patient",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/patient/index.vue",

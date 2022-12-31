@@ -5,6 +5,7 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _7cabb677 = () => interopDefault(import('../pages/hosp/index.vue' /* webpackChunkName: "pages/hosp/index" */))
+const _5c616531 = () => interopDefault(import('../pages/order/index.vue' /* webpackChunkName: "pages/order/index" */))
 const _1cb0de28 = () => interopDefault(import('../pages/patient/index.vue' /* webpackChunkName: "pages/patient/index" */))
 const _6d0d67de = () => interopDefault(import('../pages/user/index.vue' /* webpackChunkName: "pages/user/index" */))
 const _039dab3e = () => interopDefault(import('../pages/hosp/booking.vue' /* webpackChunkName: "pages/hosp/booking" */))
@@ -33,6 +34,10 @@ export const routerOptions = {
     path: "/hosp",
     component: _7cabb677,
     name: "hosp"
+  }, {
+    path: "/order",
+    component: _5c616531,
+    name: "order"
   }, {
     path: "/patient",
     component: _1cb0de28,
