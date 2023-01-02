@@ -184,6 +184,9 @@ export default {
     },
     move(index, depcode) {
       this.activeIndex = index
+      console.log("hoscode.vue")
+      console.log(this.activeIndex)
+      console.log(depcode)
       document.getElementById(depcode).scrollIntoView();
     }
   }
