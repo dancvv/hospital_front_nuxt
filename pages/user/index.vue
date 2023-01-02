@@ -124,7 +124,7 @@ export default {
             submitBnt: '提交'
         }
     },
-    created() {
+    mounted() {
         this.init()
     },
     methods: {

@@ -164,12 +164,13 @@ export default {
                     this.dialogPayVisible = false
                     this.$message.error("支付错误")
                 } else {
-                    // this.timer = setInterval(() => {
-                    //     this.queryPayStatus(this.orderId)
-                    // }, 3000);
+                    this.timer = setInterval(() => {
+                        this.queryPayStatus(this.orderId)
+                    }, 3000);
                 }
             })
         },
+        // 查询支付状态
         queryPayStatus(orderId) {
             weixinApi.queryPayStatus(orderId).then(response => {
                 if (response.message == '支付中') {

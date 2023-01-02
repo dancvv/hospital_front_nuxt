@@ -9,6 +9,7 @@ export default {
             method: `get`
         })
     },
+    // 查询支付状态
     queryPayStatus(orderId) {
         return request({
             url: `/api/order/weixin/queryPayStatus/${orderId}`,

@@ -3,98 +3,84 @@
     "name": "hosp",
     "path": "/hosp",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/hosp/index.vue",
-    "chunkName": "pages/hosp/index",
-    "_name": "_7cabb677"
+    "chunkName": "pages/hosp/index"
   },
   {
     "name": "order",
     "path": "/order",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/order/index.vue",
-    "chunkName": "pages/order/index",
-    "_name": "_5c616531"
+    "chunkName": "pages/order/index"
   },
   {
     "name": "patient",
     "path": "/patient",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/patient/index.vue",
-    "chunkName": "pages/patient/index",
-    "_name": "_1cb0de28"
+    "chunkName": "pages/patient/index"
   },
   {
     "name": "user",
     "path": "/user",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/user/index.vue",
-    "chunkName": "pages/user/index",
-    "_name": "_6d0d67de"
+    "chunkName": "pages/user/index"
   },
   {
     "name": "hosp-booking",
     "path": "/hosp/booking",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/hosp/booking.vue",
-    "chunkName": "pages/hosp/booking",
-    "_name": "_039dab3e"
+    "chunkName": "pages/hosp/booking"
   },
   {
     "name": "hosp-schedule",
     "path": "/hosp/schedule",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/hosp/schedule.vue",
-    "chunkName": "pages/hosp/schedule",
-    "_name": "_46e2f682"
+    "chunkName": "pages/hosp/schedule"
   },
   {
     "name": "order-show",
     "path": "/order/show",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/order/show.vue",
-    "chunkName": "pages/order/show",
-    "_name": "_407ce124"
+    "chunkName": "pages/order/show"
   },
   {
     "name": "patient-add",
     "path": "/patient/add",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/patient/add.vue",
-    "chunkName": "pages/patient/add",
-    "_name": "_78f485f7"
+    "chunkName": "pages/patient/add"
   },
   {
     "name": "patient-show",
     "path": "/patient/show",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/patient/show.vue",
-    "chunkName": "pages/patient/show",
-    "_name": "_4498c8d2"
+    "chunkName": "pages/patient/show"
   },
   {
     "name": "weixin-callback",
     "path": "/weixin/callback",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/weixin/callback.vue",
-    "chunkName": "pages/weixin/callback",
-    "_name": "_48222332"
+    "chunkName": "pages/weixin/callback"
   },
   {
     "name": "hosp-detail-hoscode",
     "path": "/hosp/detail/:hoscode?",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/hosp/detail/_hoscode.vue",
-    "chunkName": "pages/hosp/detail/_hoscode",
-    "_name": "_0e2fd546"
+    "chunkName": "pages/hosp/detail/_hoscode"
   },
   {
     "name": "hosp-notice-hoscode",
     "path": "/hosp/notice/:hoscode?",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/hosp/notice/_hoscode.vue",
-    "chunkName": "pages/hosp/notice/_hoscode",
-    "_name": "_739caa36"
+    "chunkName": "pages/hosp/notice/_hoscode"
   },
   {
     "name": "hosp-hoscode",
     "path": "/hosp/:hoscode",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/hosp/_hoscode.vue",
-    "chunkName": "pages/hosp/_hoscode",
-    "_name": "_a7674536"
+    "chunkName": "pages/hosp/_hoscode"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/weivang/VisualStudioCode/hospital_front_nuxt/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_046b8e9c"
+    "chunkName": "pages/index"
   }
 ]
